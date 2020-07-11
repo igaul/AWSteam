@@ -1,0 +1,46 @@
+@import "normalize";
+
+body {
+  font-family: sans-serif;
+}
+
+.ember-google-map {
+  height: 100vh;
+  width: 100vw;
+}
+
+.__locations {
+  position: fixed;
+  top: 32px;
+  left: 32px;
+  background-color: white;
+  box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.75);
+  max-height: 700px;
+  overflow: scroll;
+
+  h2 {
+    padding: 0 16px;
+    border-bottom: 1px solid grey;
+    margin: 16px 0 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+  }
+
+  &__location {
+    padding: 8px 16px;
+    border-bottom: 1px solid lightgrey;
+    min-width: 200px;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    span {
+      float: right;
+    }
+  }
+}

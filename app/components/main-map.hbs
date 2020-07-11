@@ -1,0 +1,25 @@
+{{#g-map
+  styles=this.mapStyle
+  lat=this.lat
+  lng=this.lng
+  zoom=this.zoom
+  disableDefaultUI=true
+
+  onLoad=(action "onLoad")
+as |g|}}
+  {{#each this.locations as |location|}}
+    {{#each location.shapes as |shape|}}
+      {{g.polygon
+        path=shape
+        geodesic=true
+        strokeColor="red"
+        strokeOpacity=0
+        strokeWeight=1
+        fillColor=location.density.color
+        fillOpacity=0.5
+       }}
+    {{/each}}
+  {{/each}}
+{{/g-map}}
+<Locations @locations={{this.locations}} />
+{{yield}}

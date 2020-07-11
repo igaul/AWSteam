@@ -1,0 +1,10 @@
+<section class="{{this.styleNamespace}}">
+  <h2> Parks </h2>
+  <ul>
+    {{log @locations}}
+    {{#each @locations as |location|}}
+      <Locations::Location @location={{location}} />
+    {{/each}}
+  </ul>
+  {{yield}}
+</section>

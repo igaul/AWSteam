@@ -23,6 +23,14 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-google-maps'] = {
+    key: 'AIzaSyD0SKft6Y-6WUScE0--htCk_HeC2OPNY0M',
+    language: 'en',
+    region: 'US',
+    protocol: 'https',
+    version: '3.41',
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
