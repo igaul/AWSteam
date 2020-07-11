@@ -1,5 +1,5 @@
-<li class="{{this.styleNamespace}}">
+<li class="{{this.styleNamespace}}" {{on "click" (fn @panTo @location.id)}}>
   <strong>{{@location.name}}</strong>
-  <span style="color: {{{@location.density.color}}}">density: {{@location.density.number}}</span>
+  <span style={{this.color}}>density: {{@location.density.number}}</span>
 </li>
 {{yield}}

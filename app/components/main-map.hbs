@@ -7,7 +7,7 @@
 
   onLoad=(action "onLoad")
 as |g|}}
-  {{#each this.locations as |location|}}
+  {{#each @locations as |location|}}
     {{#each location.shapes as |shape|}}
       {{g.polygon
         path=shape
@@ -21,5 +21,5 @@ as |g|}}
     {{/each}}
   {{/each}}
 {{/g-map}}
-<Locations @locations={{this.locations}} />
+<Locations @locations={{@locations}} @panTo={{this.panTo}} />
 {{yield}}
