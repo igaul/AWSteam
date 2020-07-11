@@ -220,7 +220,7 @@ export default class MainMapComponent extends Component {
       shapes: getShapes(feature.geometry.coordinates),
       name: feature.properties.NAME,
       density: {
-        number: getRandomIntRange(1, 10),
+        number: density,
         color: densityColors[density - 1],
       }
     }

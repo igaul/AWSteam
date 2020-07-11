@@ -15,8 +15,4 @@ export default class LocationsLocationComponent extends Component {
     '#C32C00',
     '#BF0100',
   ];
-
-  get color() {
-    return this.densityColors[this.args.location.density - 1];
-  }
 }
