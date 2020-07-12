@@ -39,10 +39,12 @@ const densityColors = [
 
 const locations = geoLocations.features.map(feature => {
   const density = getRandomIntRange(1, 10);
+  const shapes = getShapes(feature.geometry.coordinates)
   return {
-    shapes: getShapes(feature.geometry.coordinates),
+    shapes: shapes,
     id: feature.properties.OBJECTID,
     name: feature.properties.NAME,
+    activeOutline: 0,
     density: {
       number: density,
       color: densityColors[density - 1],
@@ -51,7 +53,7 @@ const locations = geoLocations.features.map(feature => {
 });
 
 export default class ApplicationRoute extends Route {
-  model() {
+  async model() {
     return locations;
   }
 }

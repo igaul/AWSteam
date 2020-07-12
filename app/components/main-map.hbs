@@ -13,13 +13,13 @@ as |g|}}
         path=shape
         geodesic=true
         strokeColor="red"
-        strokeOpacity=0
-        strokeWeight=1
+        strokeOpacity=location.activeOutline
+        strokeWeight=3
         fillColor=location.density.color
         fillOpacity=0.5
        }}
     {{/each}}
   {{/each}}
 {{/g-map}}
-<Locations @locations={{@locations}} @panTo={{this.panTo}} />
+<Locations @locations={{this.sortedLocations}} @panTo={{this.panTo}} />
 {{yield}}
