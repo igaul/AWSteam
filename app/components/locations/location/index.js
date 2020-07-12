@@ -9,4 +9,10 @@ export default class LocationsLocationComponent extends Component {
   get color() {
     return htmlSafe(`color: ${this.args.location.density.color}`);
   }
+
+  @computed('args.location.{density.color,activeOutline}')
+  get cellColor() {
+    const newBackground = this.args.location.activeOutline ? this.args.location.density.color : 'black';
+    return htmlSafe(`color: ${newBackground}`);
+  }
 }

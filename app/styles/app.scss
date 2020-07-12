@@ -34,13 +34,19 @@ body {
     padding: 8px 16px;
     border-bottom: 1px solid lightgrey;
     min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+
+    strong {
+      padding-right: 16px;
+    }
+
+    &.selected {
+      background-color: #f3f3f3;
+    }
 
     &:last-child {
       border-bottom: 0;
-    }
-
-    span {
-      float: right;
     }
   }
 }

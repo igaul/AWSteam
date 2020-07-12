@@ -1,5 +1,5 @@
-<li class="{{this.styleNamespace}}" {{on "click" (fn @panTo @location.id)}}>
-  <strong>{{@location.name}}</strong>
+<li class="{{this.styleNamespace}} {{if @location.activeOutline 'selected'}}" {{on "click" (fn @panTo @location.id)}}>
+  <strong style={{this.cellColor}}>{{@location.name}}</strong>
   <span style={{this.color}}>density: {{@location.density.number}}</span>
 </li>
 {{yield}}
