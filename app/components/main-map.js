@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { sort, filter } from '@ember/object/computed';
+import { sort } from '@ember/object/computed';
 
 import MAIN_MAP_STYLE from 'healthy-life/data/map-style';
 

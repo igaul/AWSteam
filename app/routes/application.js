@@ -1,6 +1,8 @@
 import Route from '@ember/routing/route';
 
 import geoLocations from 'healthy-life/data/parks';
+import { set } from '@ember/object';
+
 
 function formatCordinates(shape) {
   return shape.map(function([lng, lat]) {
@@ -55,5 +57,16 @@ const locations = geoLocations.features.map(feature => {
 export default class ApplicationRoute extends Route {
   async model() {
     return locations;
+  }
+
+  afterModel(model) {
+    setInterval(function() {
+      model.forEach(function(location) {
+        const possibleNewDensity = location.density.number + getRandomIntRange(-1, 1);
+        const newDensity = Math.min(Math.max(parseInt(possibleNewDensity), 1), 10);
+        set(location, 'density.number', newDensity);
+        set(location, 'density.color', densityColors[newDensity - 1]);
+      })
+    }, getRandomIntRange(1000, 5000))
   }
 }
